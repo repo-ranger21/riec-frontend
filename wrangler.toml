@@ -1,0 +1,13 @@
+name = "riec-frontend"
+type = "javascript"
+main = "src/index.ts"
+compatibility_date = "2025-04-30"
+
+# Cloudflare Pages configuration for Next.js
+[build]
+command = "npm run build"
+cwd = "."
+root = "."
+
+[env.production]
+name = "riec-frontend-prod"
