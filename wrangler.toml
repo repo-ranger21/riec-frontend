@@ -1,13 +1,4 @@
 name = "riec-frontend"
-type = "javascript"
-main = "src/index.ts"
-compatibility_date = "2025-04-30"
-
-# Cloudflare Pages configuration for Next.js
-[build]
-command = "npm run build"
-cwd = "."
-root = "."
-
-[env.production]
-name = "riec-frontend-prod"
+pages_build_output_dir = ".vercel/output/static"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]

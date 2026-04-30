@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 
+
 export const metadata: Metadata = {
 	title: "RIEC",
 	description: "RIEC website placeholder scaffold",
@@ -24,3 +25,4 @@ export default function RootLayout({
 		</html>
 	);
 }
+
