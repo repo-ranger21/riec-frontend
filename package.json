@@ -1,0 +1,49 @@
+{
+  "name": "riec-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Rhode Island Education Center for H.O.P.E. — official website",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "analyze": "ANALYZE=true next build"
+  },
+  "dependencies": {
+    "next": "15.5.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@formspree/react": "^2.5.1",
+    "@next/third-parties": "^15.5.15"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.4.5",
+    "tailwindcss": "^3.4.4",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "15.5.15",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
+    "prettier": "^3.3.2",
+    "@next/bundle-analyzer": "^15.5.15"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "overrides": {
+    "next": {
+      "postcss": ">=8.5.10"
+    },
+    "glob": "^11.0.0"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "compilerOptions": {
+    /* ── Language & Environment ──────────────────────────────────── */
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "jsx": "preserve",
+    /* ── Module Resolution ───────────────────────────────────────── */
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    /* ── Path Aliases ────────────────────────────────────────────── */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@/components/*": [
+        "./components/*"
+      ],
+      "@/lib/*": [
+        "./lib/*"
+      ],
+      "@/app/*": [
+        "./app/*"
+      ]
+    },
+    /* ── Strict Type Checking ────────────────────────────────────── */
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    /* ── Unused Code ─────────────────────────────────────────────── */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    /* ── Emit ────────────────────────────────────────────────────── */
+    "noEmit": true,
+    "incremental": true,
+    /* ── Interop & Compatibility ─────────────────────────────────── */
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    /* ── Plugins (Next.js) ───────────────────────────────────────── */
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.d.ts",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out",
+    "dist"
+  ]
+}
