@@ -28,12 +28,12 @@ import {
   type Program,
 } from "@/lib/programs";
 
-export const runtime = 'edge';
-
 /* ─── STATIC PARAMS ──────────────────────────────────────────────────────────
  * Pre-renders every program page at build time.
  * Any slug NOT returned here will hit the dynamic fallback (404).
  * ─────────────────────────────────────────────────────────────────────────── */
+export const dynamicParams = false
+
 export function generateStaticParams(): { slug: string }[] {
   return VALID_SLUGS.map((slug) => ({ slug }));
 }
