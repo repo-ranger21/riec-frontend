@@ -325,6 +325,58 @@ export default function ApplyForm() {
               borderTop: '4px solid #C8A136',
               padding: '36px 32px',
             }}>
+              {/* Step preview strip — visible before form begins */}
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: 0,
+                marginBottom: 28, flexWrap: 'wrap',
+              }}>
+                {STEPS.map((label, i) => (
+                  <div key={label} style={{ display: 'flex', alignItems: 'center', flex: i < STEPS.length - 1 ? 1 : undefined }}>
+                    <div style={{
+                      display: 'flex', alignItems: 'center', gap: 8,
+                      padding: '8px 12px',
+                      background: i < step
+                        ? 'rgba(27,122,140,0.08)'
+                        : i === step
+                        ? 'rgba(200,161,54,0.1)'
+                        : 'transparent',
+                      border: i === step
+                        ? '1px solid rgba(200,161,54,0.4)'
+                        : '1px solid transparent',
+                    }}>
+                      <span style={{
+                        width: 20, height: 20, flexShrink: 0,
+                        background: i < step ? '#1B7A8C' : i === step ? '#C8A136' : 'rgba(12,27,77,0.1)',
+                        color: i < step || i === step ? '#fff' : '#2C2C3A',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: 10, fontWeight: 800,
+                      }}>
+                        {i < step ? '✓' : i + 1}
+                      </span>
+                      <span style={{
+                        fontSize: 12, fontWeight: i === step ? 700 : 500,
+                        color: i === step ? '#0C1B4D' : i < step ? '#1B7A8C' : '#6B7094',
+                        whiteSpace: 'nowrap',
+                      }}>
+                        {label}
+                      </span>
+                    </div>
+                    {i < STEPS.length - 1 && (
+                      <div style={{
+                        flex: 1, height: 1,
+                        background: i < step ? '#1B7A8C' : 'rgba(12,27,77,0.1)',
+                        minWidth: 12,
+                      }} />
+                    )}
+                  </div>
+                ))}
+              </div>
+              <p style={{
+                fontSize: 12, color: '#6B7094', marginBottom: 28, marginTop: -16,
+              }}>
+                Estimated time: 3 minutes. No commitment required.
+              </p>
+
               <h2 style={{
                 fontFamily: 'var(--font-playfair), Georgia, serif',
                 fontSize: 22, fontWeight: 800, color: '#0C1B4D',
@@ -337,6 +389,8 @@ export default function ApplyForm() {
 
               {/* ── STEP 1 ─────────────────────────────────────────────── */}
               {step === 0 && (
+                <fieldset style={{ border: 'none', margin: 0, padding: 0 }}>
+                <legend className="sr-only">Step 1: Personal Information</legend>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                     <div>
@@ -406,10 +460,13 @@ export default function ApplyForm() {
                     )}
                   </div>
                 </div>
+                </fieldset>
               )}
 
               {/* ── STEP 2 ─────────────────────────────────────────────── */}
               {step === 1 && (
+                <fieldset style={{ border: 'none', margin: 0, padding: 0 }}>
+                <legend className="sr-only">Step 2: Program &amp; Schedule</legend>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
                   <div style={{
                     background: 'rgba(200,161,54,0.08)', border: '1px solid rgba(200,161,54,0.25)',
@@ -483,10 +540,13 @@ export default function ApplyForm() {
                     </div>
                   </fieldset>
                 </div>
+                </fieldset>
               )}
 
               {/* ── STEP 3 ─────────────────────────────────────────────── */}
               {step === 2 && (
+                <fieldset style={{ border: 'none', margin: 0, padding: 0 }}>
+                <legend className="sr-only">Step 3: Grant Eligibility</legend>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
                   <div style={{
                     background: 'linear-gradient(135deg, rgba(200,161,54,0.1) 0%, rgba(200,161,54,0.05) 100%)',
@@ -589,6 +649,7 @@ export default function ApplyForm() {
                   <input type="hidden" name="_subject" value={`New RIEC Pre-Qualification: ${data.first_name} ${data.last_name}`} />
                   <input type="hidden" name="_replyto" value={data.email} />
                 </div>
+                </fieldset>
               )}
 
               {/* Submit error */}
@@ -610,6 +671,7 @@ export default function ApplyForm() {
                 {step > 0 ? (
                   <button
                     type="button"
+                    aria-label="Go back to the previous step"
                     onClick={() => setStep((s) => s - 1)}
                     style={{
                       background: 'transparent', color: '#0C1B4D',
@@ -625,6 +687,7 @@ export default function ApplyForm() {
                 {step < 2 ? (
                   <button
                     type="button"
+                    aria-label={`Continue to step ${step + 2} of ${STEPS.length}`}
                     onClick={nextStep}
                     style={{
                       background: '#C8A136', color: '#08122E',
@@ -727,9 +790,16 @@ export default function ApplyForm() {
                   <span aria-hidden="true" style={{ color: '#C8A136', flexShrink: 0 }}>✓</span> {t}
                 </div>
               ))}
+              <div style={{ marginTop: 10, fontSize: 11, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
+                By submitting this form, you agree to our{' '}
+                <Link href="/privacy" style={{ color: '#C8A136', textDecoration: 'underline' }}>
+                  Privacy Policy
+                </Link>
+                .
+              </div>
               <div style={{
                 marginTop: 14, paddingTop: 12, borderTop: '1px solid rgba(255,255,255,0.1)',
-                fontSize: 11, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.04em',
+                fontSize: 11, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.04em',
               }}>
                 EIN 99-3099438 · 501(c)(3) Nonprofit
               </div>

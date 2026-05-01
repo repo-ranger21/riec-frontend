@@ -18,7 +18,7 @@ const BADGE_COLORS: Record<string, { bg: string; color: string; border: string }
 const FAQS = [
   {
     q: 'Who is eligible for free training?',
-    a: 'Rhode Island residents who meet income guidelines for state workforce development grants are eligible. We help you determine eligibility as part of the free pre-qualification process. Most students who apply qualify.',
+    a: 'Low-income and underserved Rhode Island residents are eligible for state workforce development grants that cover 100% of tuition and fees. We help you confirm eligibility as part of the free pre-qualification process — it takes under 5 minutes and most applicants qualify.',
   },
   {
     q: 'What certifications will I earn?',
@@ -132,7 +132,7 @@ export default function RIECHomepage() {
           </p>
 
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', marginBottom: 64 }}>
-            <Link href="/apply" style={{
+            <Link href="/apply" aria-label="Apply for free healthcare training at RIEC" style={{
               background: '#C8A136', color: '#08122E',
               padding: '15px 36px', fontSize: 15, fontWeight: 800,
               letterSpacing: '0.06em', textDecoration: 'none',
@@ -140,7 +140,7 @@ export default function RIECHomepage() {
             }}>
               Apply Free →
             </Link>
-            <Link href="/programs" style={{
+            <Link href="/programs" aria-label="View all RIEC healthcare training programs" style={{
               background: 'transparent', color: '#fff',
               padding: '15px 36px', fontSize: 15, fontWeight: 600,
               letterSpacing: '0.06em', textDecoration: 'none',
@@ -694,7 +694,7 @@ export default function RIECHomepage() {
           </p>
 
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 40 }}>
-            <Link href="/apply" style={{
+            <Link href="/apply" aria-label="Apply for free healthcare training at RIEC" style={{
               background: '#C8A136', color: '#08122E',
               padding: '16px 44px', fontSize: 15, fontWeight: 800,
               letterSpacing: '0.06em', textDecoration: 'none',
@@ -702,7 +702,7 @@ export default function RIECHomepage() {
             }}>
               Apply Free Now →
             </Link>
-            <Link href="/donate" style={{
+            <Link href="/donate" aria-label="Donate to support RIEC students" style={{
               background: 'transparent', color: 'rgba(255,255,255,0.8)',
               padding: '16px 44px', fontSize: 15, fontWeight: 600,
               letterSpacing: '0.06em', textDecoration: 'none',
@@ -743,7 +743,7 @@ export default function RIECHomepage() {
           </h2>
 
           <dl>
-            {FAQS.map((faq, i) => (
+            {FAQS.slice(0, 4).map((faq, i) => (
               <div
                 key={i}
                 style={{
@@ -768,7 +768,7 @@ export default function RIECHomepage() {
                   >
                     {faq.q}
                     <span aria-hidden="true" style={{
-                      flexShrink: 0, fontSize: 18, color: '#C8A136',
+                      flexShrink: 0, fontSize: 18, color: '#8B6A10',
                       transition: 'transform 0.25s',
                       transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0deg)',
                     }}>
@@ -789,17 +789,29 @@ export default function RIECHomepage() {
             ))}
           </dl>
 
-          <p style={{ textAlign: 'center', marginTop: 40, fontSize: 14, color: '#6B7094' }}>
-            More questions?{' '}
-            <a href="tel:+14014520171" style={{ color: '#0C1B4D', fontWeight: 600 }}>
-              Call 401-452-0171
-            </a>
-            {' or '}
-            <a href="mailto:chris@rieducationcenter.org" style={{ color: '#0C1B4D', fontWeight: 600 }}>
-              email us
-            </a>
-            .
-          </p>
+          <div style={{ textAlign: 'center', marginTop: 40, display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center', justifyContent: 'center' }}>
+            <Link
+              href="/faq"
+              style={{
+                display: 'inline-block',
+                background: '#0C1B4D',
+                color: '#fff',
+                padding: '11px 28px',
+                fontSize: 13,
+                fontWeight: 700,
+                letterSpacing: '0.05em',
+                textDecoration: 'none',
+              }}
+            >
+              See All FAQs →
+            </Link>
+            <span style={{ fontSize: 14, color: '#6B7094' }}>
+              or call{' '}
+              <a href="tel:+14014520171" style={{ color: '#0C1B4D', fontWeight: 600 }}>
+                401-452-0171
+              </a>
+            </span>
+          </div>
         </div>
       </section>
     </>

@@ -63,7 +63,7 @@ export async function generateMetadata({
       "Rhode Island Education Center for H.O.P.E. | 401-452-0171.",
     alternates: { canonical: url },
     openGraph: {
-      title: `${program.fullName} | RIEC Rhode Island`,
+      title: `${program.fullName} | RIEC — Free Healthcare Training Rhode Island`,
       description: program.tagline,
       url,
       type: "website",

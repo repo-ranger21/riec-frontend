@@ -18,8 +18,8 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Rhode Island Education Center for H.O.P.E.",
-    template: "%s | RIEC",
+    default: "RIEC — Free Healthcare Training Rhode Island",
+    template: "%s | RIEC — Free Healthcare Training Rhode Island",
   },
   description:
     "100% grant-funded healthcare workforce training for Rhode Island. CNA, PCT, Phlebotomy, EKG, EMT, and AHA certifications.",

@@ -1,10 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import DonorboxSection from '@/components/DonorboxSection';
 
 export const metadata: Metadata = {
   title: "Donate — Fund a Student's Healthcare Career",
   description:
-    "Your donation to RIEC funds 100% grant-matched healthcare training for low-income Rhode Islanders. Tax-deductible. EIN 99-3099438.",
+    "Your tax-deductible gift funds 100% grant-matched healthcare training for underserved Rhode Islanders — covering tuition, transportation, and childcare. EIN 99-3099438.",
+  alternates: { canonical: 'https://rieducationcenter.org/donate' },
+  openGraph: {
+    title: "Donate — Fund a Student's Healthcare Career | RIEC — Free Healthcare Training Rhode Island",
+    description:
+      "Every dollar you give launches a Rhode Island healthcare career. 501(c)(3) tax-deductible. Secure. Transparent. EIN 99-3099438.",
+    url: 'https://rieducationcenter.org/donate',
+    type: 'website',
+  },
 };
 
 const donateActionSchema = {
@@ -25,12 +34,12 @@ const donateActionSchema = {
 };
 
 const IMPACT_TIERS = [
-  { amount: '$25',   icon: '📚', title: 'Textbooks & Supplies',    desc: 'Covers workbooks, printed materials, and clinical supplies for one student.' },
-  { amount: '$75',   icon: '🚌', title: 'Month of Bus Passes',     desc: 'A full month of RIPTA transportation so a student never misses class.' },
-  { amount: '$150',  icon: '👶', title: 'Childcare for One Week',  desc: 'One week of childcare support, removing a major barrier to attendance.' },
-  { amount: '$500',  icon: '🎓', title: 'Half a CNA Program',      desc: 'Covers half the cost of a Certified Nursing Assistant training cohort.' },
-  { amount: '$1,000', icon: '⚕️', title: 'Launch a Career',        desc: "Funds a complete certification program and launches a student's healthcare career. This is the most direct path to real impact.", featured: true },
-  { amount: '$5,000', icon: '🏥', title: 'Fund a Full Cohort',     desc: 'Sponsors an entire cohort of students — from enrollment to certification.' },
+  { amount: '$25',    icon: '📚', ariaLabel: 'Books',         title: 'Textbooks & Supplies',   desc: 'Covers workbooks, printed materials, and clinical supplies for one student.' },
+  { amount: '$75',    icon: '🚌', ariaLabel: 'Bus',           title: 'Month of Bus Passes',    desc: 'A full month of RIPTA transportation so a student never misses class.' },
+  { amount: '$150',   icon: '👶', ariaLabel: 'Child',         title: 'Childcare for One Week', desc: 'One week of childcare support, removing a major barrier to attendance.' },
+  { amount: '$500',   icon: '🎓', ariaLabel: 'Graduation cap',title: 'Half a CNA Program',     desc: 'Covers half the cost of a Certified Nursing Assistant training cohort.' },
+  { amount: '$1,000', icon: '⚕️', ariaLabel: 'Medical',       title: 'Launch a Career',        desc: "Funds a complete certification program and launches a student's healthcare career. This is the most direct path to real impact.", featured: true },
+  { amount: '$5,000', icon: '🏥', ariaLabel: 'Hospital',      title: 'Fund a Full Cohort',     desc: 'Sponsors an entire cohort of students — from enrollment to certification.' },
 ];
 
 const DONATE_FAQS = [
@@ -105,11 +114,11 @@ export default function DonatePage() {
             color: 'rgba(255,255,255,0.6)',
             lineHeight: 1.75, marginBottom: 40,
           }}>
-            Your gift directly funds healthcare training for low-income Rhode Islanders —
+            Your gift directly funds healthcare training for low-income and underserved Rhode Island residents —
             covering tuition, transportation, childcare, and career placement support.
           </p>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="#donate-now" style={{
+            <a href="#donate-now" aria-label="Donate to RIEC — skip to the donation form" style={{
               display: 'inline-block',
               background: '#C8A136', color: '#08122E',
               padding: '14px 40px', fontSize: 14, fontWeight: 800,
@@ -150,7 +159,7 @@ export default function DonatePage() {
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-            {IMPACT_TIERS.map(({ amount, icon, title, desc, featured }) => (
+            {IMPACT_TIERS.map(({ amount, icon, ariaLabel, title, desc, featured }) => (
               <div
                 key={amount}
                 style={{
@@ -170,7 +179,9 @@ export default function DonatePage() {
                     Most Popular
                   </div>
                 )}
-                <div style={{ fontSize: 32, marginBottom: 12 }} aria-hidden="true">{icon}</div>
+                <div style={{ fontSize: 32, marginBottom: 12 }}>
+                  <span role="img" aria-label={ariaLabel}>{icon}</span>
+                </div>
                 <div style={{
                   fontFamily: 'var(--font-playfair), Georgia, serif',
                   fontSize: 32, fontWeight: 900,
@@ -221,39 +232,23 @@ export default function DonatePage() {
             All donations are secure, encrypted, and tax-deductible (EIN: 99-3099438).
           </p>
 
-          {/* Donorbox widget */}
-          {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-          <script src="https://donorbox.org/widget.js"></script>
-          <iframe
-            src="https://donorbox.org/embed/riec-hope"
-            title="Donate to Rhode Island Education Center for H.O.P.E."
-            name="donorbox"
-            allow="payment"
-            seamless
-            height={900}
-            width="100%"
-            style={{
-              maxWidth: 500, minWidth: 250,
-              display: 'block', margin: '0 auto',
-              border: 0, overflow: 'hidden',
-            }}
-          />
+          <DonorboxSection />
 
           {/* Trust items below iframe */}
           <div style={{
             display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 12, marginTop: 32,
           }}>
             {[
-              { icon: '🔒', text: 'SSL encrypted transaction' },
-              { icon: '🏛️', text: '501(c)(3) registered nonprofit' },
-              { icon: '📋', text: 'PCI-DSS compliant processing' },
-              { icon: '✉️', text: 'Acknowledgment letter provided' },
-            ].map(({ icon, text }) => (
+              { icon: '🔒', ariaLabel: 'Lock',     text: 'SSL encrypted transaction' },
+              { icon: '🏛️', ariaLabel: 'Building', text: '501(c)(3) registered nonprofit' },
+              { icon: '📋', ariaLabel: 'Clipboard', text: 'PCI-DSS compliant processing' },
+              { icon: '✉️', ariaLabel: 'Envelope',  text: 'Acknowledgment letter provided' },
+            ].map(({ icon, ariaLabel, text }) => (
               <div key={text} style={{
                 display: 'flex', gap: 8, alignItems: 'center',
                 fontSize: 12, color: '#6B7094',
               }}>
-                <span aria-hidden="true">{icon}</span> {text}
+                <span role="img" aria-label={ariaLabel}>{icon}</span> {text}
               </div>
             ))}
           </div>
@@ -278,15 +273,13 @@ export default function DonatePage() {
               },
               {
                 icon: '📊', title: 'Transparent Finances',
-                desc: 'Annual financials filed with IRS and available publicly.',
-                link: 'https://www.candid.org',
-                linkLabel: 'View on Candid',
+                desc: 'As a newly established nonprofit (EIN: 99-3099438, founded 2024), RIEC\'s first Form 990 will be filed in 2025 and made publicly available upon completion. IRS tax-exempt status is verified at the link below. Candid profile coming soon.',
+                link: null, linkLabel: null,
               },
               {
                 icon: '🪪', title: 'EIN 99-3099438',
                 desc: 'Federal employer identification number for tax records.',
-                link: 'https://projects.propublica.org/nonprofits/',
-                linkLabel: 'ProPublica Nonprofit Explorer',
+                link: null, linkLabel: null,
               },
             ].map(({ icon, title, desc, link, linkLabel }) => (
               <div key={title} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>

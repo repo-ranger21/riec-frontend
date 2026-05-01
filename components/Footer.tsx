@@ -157,7 +157,7 @@ export default function Footer() {
 
             <p className="footer-mission-blurb">
               A 501(c)(3) nonprofit providing 100% grant-funded healthcare
-              workforce training for low-income and BIPOC Rhode Islanders.
+              workforce training for low-income and underserved Rhode Island residents.
               We educate, certify, and place.
             </p>
 
@@ -256,8 +256,8 @@ export default function Footer() {
           <div className="trust-item">
             <span className="trust-icon" aria-hidden="true">🏛️</span>
             <div>
-              <div className="trust-title">Rhode Island State Approved</div>
-              <div className="trust-desc">All programs approved by RIDOH</div>
+              <div className="trust-title">State &amp; Nationally Approved</div>
+              <div className="trust-desc">Programs approved by RIDOH and national certifying bodies</div>
             </div>
           </div>
           <div className="trust-item">
@@ -281,7 +281,7 @@ export default function Footer() {
           <div className="footer-legal-left">
             <span className="footer-ein">
               EIN: 99-3099438 &nbsp;·&nbsp; 501(c)(3) Tax-Exempt Nonprofit
-              &nbsp;·&nbsp; Providence, Rhode Island
+              &nbsp;·&nbsp; Warwick, Rhode Island
             </span>
           </div>
 

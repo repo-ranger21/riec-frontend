@@ -32,8 +32,8 @@ interface NavLink {
 const NAV_LINKS: NavLink[] = [
   { href: "/programs", label: "Programs" },
   { href: "/about", label: "About RIEC" },
-  { href: "/apply", label: "How It Works" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "/#how-it-works", label: "How It Works" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 /* ─── ANCHOR ICON ─────────────────────────────────────────────────────────── */
