@@ -338,7 +338,7 @@ export default function Nav() {
         }
         .nav-logo-text {
           font-family: var(--font-playfair), 'Georgia', serif;
-          font-size: 16px; font-weight: 700; color: #fff;
+          font-size: 16px; font-weight: 700; color: #0C1B4D;
           line-height: 1.2; letter-spacing: 0.01em;
         }
         .nav-logo-accent { color: #C8A136; }
