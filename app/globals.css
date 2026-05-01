@@ -1,0 +1,281 @@
+/**
+ * app/globals.css
+ * Base styles, CSS custom properties (design tokens), and accessibility utilities.
+ * Imported once in layout.tsx — applies globally.
+ */
+
+/* ─── DESIGN TOKENS ──────────────────────────────────────────────────────── */
+:root {
+  /* Brand colors */
+  --color-navy:       #0C1B4D;
+  --color-navy-light: #162260;
+  --color-navy-deep:  #08122E;
+  --color-gold:       #C8A136;
+  --color-gold-light: #DEB840;
+  --color-gold-pale:  #F5E9C0;
+  --color-teal:       #1B7A8C;
+  --color-teal-light: #22A5BD;
+  --color-cream:      #FAF7F2;
+  --color-cream-dark: #F0EBE1;
+  --color-white:      #FFFFFF;
+  --color-body:       #2C2C3A;
+  --color-muted:      #6B7094;
+  --color-error:      #C0392B;
+  --color-success:    #1B7A5A;
+  --color-border:     rgba(12, 27, 77, 0.12);
+
+  /* Typography */
+  --font-playfair: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans:     'DM Sans', system-ui, -apple-system, sans-serif;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 96px;
+
+  /* Border radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* Transition */
+  --transition-fast:   0.15s ease;
+  --transition-base:   0.25s ease;
+  --transition-slow:   0.4s ease;
+
+  /* Shadows */
+  --shadow-sm:  0 2px 8px rgba(12, 27, 77, 0.08);
+  --shadow-md:  0 8px 24px rgba(12, 27, 77, 0.12);
+  --shadow-lg:  0 20px 48px rgba(12, 27, 77, 0.16);
+  --shadow-gold: 0 8px 24px rgba(200, 161, 54, 0.25);
+
+  /* Z-index scale */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-modal:   200;
+  --z-nav:     1000;
+}
+
+/* ─── RESET ──────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── BASE ────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Prevent layout shift from scrollbar appearing */
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair);
+  color: var(--color-navy);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+p {
+  max-width: 70ch;
+}
+
+a {
+  color: var(--color-teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-navy);
+}
+
+/* Remove default list styles only when inside nav/menu contexts */
+nav ul,
+nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── ACCESSIBILITY ───────────────────────────────────────────────────────── */
+
+/* Skip to Main Content Link
+ * Visually hidden until focused — WCAG 2.4.1 (Bypass Blocks)
+ * Must be the first focusable element on the page.
+ */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 9999;
+  background: var(--color-navy);
+  color: var(--color-gold) !important;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  border: 2px solid var(--color-gold);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 16px;
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Visually hidden — accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visible — always show for keyboard nav, suppress for mouse */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border: rgba(12, 27, 77, 0.4);
+  }
+}
+
+/* ─── IMAGES ─────────────────────────────────────────────────────────────── */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── FORMS ──────────────────────────────────────────────────────────────── */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* ─── UTILITY CLASSES ─────────────────────────────────────────────────────── */
+
+/* Section padding */
+.section-pad {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-10);
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* Max-width container */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* Section label (eyebrow text) */
+.label-text {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-teal);
+  margin-bottom: 10px;
+}
+
+/* Color utilities */
+.text-navy   { color: var(--color-navy); }
+.text-gold   { color: var(--color-gold); }
+.text-teal   { color: var(--color-teal); }
+.text-muted  { color: var(--color-muted); }
+.text-white  { color: var(--color-white); }
+.bg-navy     { background-color: var(--color-navy); }
+.bg-navy-deep { background-color: var(--color-navy-deep); }
+.bg-cream    { background-color: var(--color-cream); }
+.bg-gold     { background-color: var(--color-gold); }
+
+/* ─── PRINT ──────────────────────────────────────────────────────────────── */
+@media print {
+  .nav-header,
+  .nav-spacer,
+  .site-footer {
+    display: none;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+}
