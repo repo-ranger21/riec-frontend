@@ -606,7 +606,7 @@ export default function RIECHomepage() {
                 icon: '🏥',
                 desc: 'Looking to hire qualified local talent? Partner with RIEC to connect your facility with our graduates and support the RI healthcare workforce.',
                 cta: 'Email Us',
-                href: 'mailto:chris@rieducationcenter.org',
+                href: 'mailto:info@rieducationcenter.org',
               },
             ].map(({ title, accent, icon, desc, cta, href }) => (
               <div
@@ -717,8 +717,8 @@ export default function RIECHomepage() {
               📞 401-452-0171
             </a>
             {' · '}
-            <a href="mailto:chris@rieducationcenter.org" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>
-              chris@rieducationcenter.org
+            <a href="mailto:info@rieducationcenter.org" style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>
+              info@rieducationcenter.org
             </a>
           </p>
         </div>

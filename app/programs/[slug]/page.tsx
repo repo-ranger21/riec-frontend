@@ -535,12 +535,12 @@ export default function ProgramDetailPage({
               }}>
                 <span aria-hidden="true">📞</span> 401-452-0171
               </a>
-              <a href="mailto:chris@rieducationcenter.org" style={{
+              <a href="mailto:info@rieducationcenter.org" style={{
                 display: "flex", alignItems: "center", gap: 8,
                 color: "rgba(255,255,255,0.55)", textDecoration: "none",
                 fontSize: 12, marginBottom: 10, wordBreak: "break-all",
               }}>
-                <span aria-hidden="true">✉️</span> chris@rieducationcenter.org
+                <span aria-hidden="true">✉️</span> info@rieducationcenter.org
               </a>
               <p style={{ fontSize: 12, color: "rgba(255,255,255,0.35)", margin: 0, lineHeight: 1.5 }}>
                 75 Commerce Dr., Warwick, RI 02886

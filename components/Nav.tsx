@@ -180,7 +180,13 @@ export default function Nav() {
             aria-label="Rhode Island Education Center for H.O.P.E. — Home"
           >
             <AnchorIcon size={30} color="#C8A136" />
-            <span className="nav-logo-text">
+            <span
+              className="nav-logo-text"
+              style={{
+                color: scrolled ? '#FAF7F2' : '#0C1B4D',
+                transition: 'color 0.3s ease',
+              }}
+            >
               RI Education Center{" "}
               <span className="nav-logo-accent">for H.O.P.E.</span>
             </span>
@@ -295,11 +301,11 @@ export default function Nav() {
                 📞 401-452-0171
               </a>
               <a
-                href="mailto:chris@rieducationcenter.org"
+                href="mailto:info@rieducationcenter.org"
                 className="mobile-contact-link"
                 tabIndex={menuOpen ? 0 : -1}
               >
-                ✉️ chris@rieducationcenter.org
+                ✉️ info@rieducationcenter.org
               </a>
             </div>
           </nav>
@@ -338,7 +344,7 @@ export default function Nav() {
         }
         .nav-logo-text {
           font-family: var(--font-playfair), 'Georgia', serif;
-          font-size: 16px; font-weight: 700; color: #0C1B4D;
+          font-size: 16px; font-weight: 700;
           line-height: 1.2; letter-spacing: 0.01em;
         }
         .nav-logo-accent { color: #C8A136; }

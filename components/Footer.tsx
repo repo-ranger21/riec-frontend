@@ -177,9 +177,9 @@ export default function Footer() {
                 <span className="footer-contact-icon" aria-hidden="true">📞</span>
                 <span>401-452-0171</span>
               </a>
-              <a href="mailto:chris@rieducationcenter.org" className="footer-contact-row" aria-label="Email RIEC">
+              <a href="mailto:info@rieducationcenter.org" className="footer-contact-row" aria-label="Email RIEC">
                 <span className="footer-contact-icon" aria-hidden="true">✉️</span>
-                <span>chris@rieducationcenter.org</span>
+                <span>info@rieducationcenter.org</span>
               </a>
               <a href="https://rieducationcenter.org" className="footer-contact-row" aria-label="RIEC website">
                 <span className="footer-contact-icon" aria-hidden="true">🌐</span>

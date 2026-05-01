@@ -53,7 +53,7 @@ const DONATE_FAQS = [
   },
   {
     q: 'Can I give in someone\'s honor or memory?',
-    a: 'Yes. On the Donorbox form below, you can include a dedication note. Contact us at chris@rieducationcenter.org to arrange a formal acknowledgment letter for the honoree or family.',
+    a: 'Yes. On the Donorbox form below, you can include a dedication note. Contact us at info@rieducationcenter.org to arrange a formal acknowledgment letter for the honoree or family.',
   },
   {
     q: 'Can I set up a recurring donation?',
@@ -126,15 +126,6 @@ export default function DonatePage() {
               border: '2px solid #C8A136',
             }}>
               Donate Now →
-            </a>
-            <a href="#impact" style={{
-              display: 'inline-block',
-              background: 'transparent', color: 'rgba(255,255,255,0.8)',
-              padding: '14px 40px', fontSize: 14, fontWeight: 600,
-              letterSpacing: '0.06em', textDecoration: 'none',
-              border: '2px solid rgba(255,255,255,0.3)',
-            }}>
-              See Your Impact
             </a>
           </div>
         </div>
@@ -327,13 +318,13 @@ export default function DonatePage() {
                 icon: '📦',
                 title: 'In-Kind Donations',
                 desc: 'We welcome donations of medical supplies, equipment, uniforms, and textbooks.',
-                cta: 'Email to Arrange', href: 'mailto:chris@rieducationcenter.org?subject=In-Kind%20Donation',
+                cta: 'Email to Arrange', href: 'mailto:info@rieducationcenter.org?subject=In-Kind%20Donation',
               },
               {
                 icon: '🤝',
                 title: 'Corporate Partnership',
                 desc: 'Partner with RIEC to sponsor a cohort, provide internship sites, or hire our graduates.',
-                cta: 'Contact Us', href: 'mailto:chris@rieducationcenter.org?subject=Corporate%20Partnership',
+                cta: 'Contact Us', href: 'mailto:info@rieducationcenter.org?subject=Corporate%20Partnership',
               },
               {
                 icon: '💙',

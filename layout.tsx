@@ -174,7 +174,7 @@ const jsonLd = {
         addressCountry: "US",
       },
       telephone: "+1-401-452-0171",
-      email: "chris@rieducationcenter.org",
+      email: "info@rieducationcenter.org",
       taxID: "99-3099438",
       nonprofitStatus: "Nonprofit501c3",
       areaServed: {

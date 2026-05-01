@@ -166,7 +166,7 @@ export default function ApplyForm() {
       if (res.ok) {
         setSubmitted(true);
       } else {
-        setSubmitError('Submission failed. Please call us at 401-452-0171 or email chris@rieducationcenter.org.');
+        setSubmitError('Submission failed. Please call us at 401-452-0171 or email info@rieducationcenter.org.');
       }
     } catch {
       setSubmitError('Network error. Please try again or call 401-452-0171.');
@@ -230,7 +230,7 @@ export default function ApplyForm() {
               Questions? Call{' '}
               <a href="tel:+14014520171" style={{ color: '#0C1B4D', fontWeight: 600 }}>401-452-0171</a>
               {' or email '}
-              <a href="mailto:chris@rieducationcenter.org" style={{ color: '#0C1B4D', fontWeight: 600 }}>chris@rieducationcenter.org</a>
+              <a href="mailto:info@rieducationcenter.org" style={{ color: '#0C1B4D', fontWeight: 600 }}>info@rieducationcenter.org</a>
               <br />
               <span style={{ fontSize: 11, color: '#999', marginTop: 4, display: 'block' }}>
                 RIEC · 501(c)(3) · EIN 99-3099438 · 75 Commerce Dr., Warwick RI
@@ -763,11 +763,11 @@ export default function ApplyForm() {
               }}>
                 <span aria-hidden="true">📞</span> 401-452-0171
               </a>
-              <a href="mailto:chris@rieducationcenter.org" style={{
+              <a href="mailto:info@rieducationcenter.org" style={{
                 display: 'block', fontSize: 12, color: '#1B7A8C',
                 textDecoration: 'none', marginBottom: 8, wordBreak: 'break-all',
               }}>
-                chris@rieducationcenter.org
+                info@rieducationcenter.org
               </a>
               <p style={{ fontSize: 12, color: '#6B7094', margin: 0, lineHeight: 1.5 }}>
                 75 Commerce Dr., Warwick, RI 02886
