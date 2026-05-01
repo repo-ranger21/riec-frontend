@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import { PROGRAMS } from '@/lib/programs';
 
-export const runtime = 'edge';
-
 export default function ProgramsPage() {
   return (
     <section style={{ padding: '2rem 0' }}>
@@ -17,4 +15,5 @@ export default function ProgramsPage() {
     </section>
   );
 }
+
 
