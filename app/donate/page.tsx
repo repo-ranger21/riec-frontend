@@ -208,21 +208,6 @@ export default function DonatePage() {
         }}
       >
         <div style={{ maxWidth: 600, margin: '0 auto' }}>
-          <h2 style={{
-            fontFamily: 'var(--font-playfair), Georgia, serif',
-            fontSize: 'clamp(24px, 3.5vw, 36px)',
-            fontWeight: 900, color: '#0C1B4D',
-            textAlign: 'center', marginBottom: 12, lineHeight: 1.1,
-          }}>
-            Make a Donation
-          </h2>
-          <p style={{
-            fontSize: 14, color: '#6B7094',
-            textAlign: 'center', marginBottom: 40, lineHeight: 1.7,
-          }}>
-            All donations are secure, encrypted, and tax-deductible (EIN: 99-3099438).
-          </p>
-
           <DonorboxSection />
 
           {/* Trust items below iframe */}
