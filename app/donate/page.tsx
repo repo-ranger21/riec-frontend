@@ -33,15 +33,6 @@ const donateActionSchema = {
   url: 'https://donorbox.org/riec-hope',
 };
 
-const IMPACT_TIERS = [
-  { amount: '$25',    icon: '📚', ariaLabel: 'Books',         title: 'Textbooks & Supplies',   desc: 'Covers workbooks, printed materials, and clinical supplies for one student.' },
-  { amount: '$75',    icon: '🚌', ariaLabel: 'Bus',           title: 'Month of Bus Passes',    desc: 'A full month of RIPTA transportation so a student never misses class.' },
-  { amount: '$150',   icon: '👶', ariaLabel: 'Child',         title: 'Childcare for One Week', desc: 'One week of childcare support, removing a major barrier to attendance.' },
-  { amount: '$500',   icon: '🎓', ariaLabel: 'Graduation cap',title: 'Half a CNA Program',     desc: 'Covers half the cost of a Certified Nursing Assistant training cohort.' },
-  { amount: '$1,000', icon: '⚕️', ariaLabel: 'Medical',       title: 'Launch a Career',        desc: "Funds a complete certification program and launches a student's healthcare career. This is the most direct path to real impact.", featured: true },
-  { amount: '$5,000', icon: '🏥', ariaLabel: 'Hospital',      title: 'Fund a Full Cohort',     desc: 'Sponsors an entire cohort of students — from enrollment to certification.' },
-];
-
 const DONATE_FAQS = [
   {
     q: 'Is my donation tax-deductible?',
@@ -131,70 +122,58 @@ export default function DonatePage() {
         </div>
       </div>
 
-      {/* ── Impact tiers ─────────────────────────────────────────────────── */}
+      {/* ── Payment grid ─────────────────────────────────────────────────── */}
+      <style>{`
+        .donate-amt-btn:hover {
+          border-color: #C8A136 !important;
+          background: #FFF8E8 !important;
+        }
+      `}</style>
       <section id="impact" style={{ background: '#FAF7F2', padding: '80px 5%' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <p style={{
-            fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase',
-            color: '#1B7A8C', fontWeight: 700, textAlign: 'center', marginBottom: 16,
+        <div style={{ maxWidth: 560, margin: '0 auto' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: 12,
           }}>
-            Every Dollar Has a Purpose
-          </p>
-          <h2 style={{
-            fontFamily: 'var(--font-playfair), Georgia, serif',
-            fontSize: 'clamp(26px, 4vw, 42px)',
-            fontWeight: 900, color: '#0C1B4D',
-            textAlign: 'center', marginBottom: 56, lineHeight: 1.1,
-          }}>
-            See Your Impact
-          </h2>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-            {IMPACT_TIERS.map(({ amount, icon, ariaLabel, title, desc, featured }) => (
-              <div
+            {[
+              { label: '$25',           amount: '25' },
+              { label: '$50',           amount: '50' },
+              { label: '$100',          amount: '100' },
+              { label: '$500',          amount: '500' },
+              { label: '$1,000',        amount: '1000' },
+              { label: 'Custom Amount', amount: 'custom' },
+            ].map(({ label, amount }) => (
+              <button
                 key={amount}
+                className="donate-amt-btn"
+                data-amount={amount}
                 style={{
-                  background: featured ? '#0C1B4D' : '#fff',
-                  border: featured ? '2px solid #C8A136' : '1px solid rgba(12,27,77,0.08)',
-                  padding: '28px 24px',
-                  position: 'relative',
+                  background: '#fff',
+                  border: '2px solid rgba(12,27,77,0.15)',
+                  color: '#0C1B4D',
+                  fontFamily: 'var(--font-dm-sans), DM Sans, sans-serif',
+                  fontSize: 18,
+                  fontWeight: 700,
+                  padding: '20px 16px',
+                  textAlign: 'center',
+                  cursor: 'pointer',
+                  transition: 'border-color 0.15s, background 0.15s',
                 }}
               >
-                {featured && (
-                  <div style={{
-                    position: 'absolute', top: -12, left: 24,
-                    background: '#C8A136', color: '#08122E',
-                    fontSize: 10, fontWeight: 800, letterSpacing: '0.1em',
-                    padding: '4px 12px', textTransform: 'uppercase',
-                  }}>
-                    Most Popular
-                  </div>
-                )}
-                <div style={{ fontSize: 32, marginBottom: 12 }}>
-                  <span role="img" aria-label={ariaLabel}>{icon}</span>
-                </div>
-                <div style={{
-                  fontFamily: 'var(--font-playfair), Georgia, serif',
-                  fontSize: 32, fontWeight: 900,
-                  color: featured ? '#C8A136' : '#0C1B4D',
-                  lineHeight: 1, marginBottom: 8,
-                }}>
-                  {amount}
-                </div>
-                <h3 style={{
-                  fontFamily: 'var(--font-playfair), Georgia, serif',
-                  fontSize: 16, fontWeight: 800,
-                  color: featured ? '#fff' : '#0C1B4D',
-                  marginBottom: 10, lineHeight: 1.2,
-                }}>
-                  {title}
-                </h3>
-                <p style={{ fontSize: 13, color: featured ? 'rgba(255,255,255,0.55)' : '#6B7094', lineHeight: 1.7, margin: 0 }}>
-                  {desc}
-                </p>
-              </div>
+                {label}
+              </button>
             ))}
           </div>
+          <p style={{
+            fontSize: 13,
+            color: '#6B7094',
+            textAlign: 'center',
+            marginTop: 16,
+            marginBottom: 0,
+          }}>
+            All donations are tax-deductible. EIN: 99-3099438.
+          </p>
         </div>
       </section>
 
