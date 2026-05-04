@@ -26,7 +26,7 @@ const FAQS = [
   },
   {
     q: 'How long do programs take?',
-    a: 'Program length varies: EKG and Phlebotomy are 4–6 weeks; CNA is 8 weeks; PCT is 12 weeks; EMT-Basic is 16 weeks; AEMT-Cardiac is approximately 6 months; and the Paramedic program is 12–18 months.',
+    a: 'Program length varies: EKG and Phlebotomy are 4–6 weeks; CNA is 8 weeks; PCT is 12 weeks; EMT is 16 weeks; AEMT-Cardiac is approximately 6 months; and the Paramedic program is 12–18 months.',
   },
   {
     q: 'Do you help with job placement?',
@@ -588,7 +588,7 @@ export default function RIECHomepage() {
                 title: 'Students',
                 accent: '#C8A136',
                 icon: '🎓',
-                desc: 'New to healthcare? Our entry-level programs like CNA, EMT-Basic, and AHA are designed for people with no prior medical experience.',
+                desc: 'New to healthcare? Our entry-level programs like CNA, EMT, and AHA are designed for people with no prior medical experience.',
                 cta: 'Apply Free',
                 href: '/apply',
               },

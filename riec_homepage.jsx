@@ -420,8 +420,8 @@ const StarRing = ({ size = 300, count = 13 }) => {
  
 const FAQS = [
   { q: "Who is eligible for grant-funded training?", a: "Eligibility is determined through Rhode Island workforce development grant programs. Requirements typically include Rhode Island residency and meeting specific income or employment criteria. Submit a pre-qualification application to determine your eligibility status — it's free and takes only a few minutes." },
-  { q: "What certifications do I earn?", a: "We offer CNA, Patient Care Technician (Triple Certification: CNA + Phlebotomy + EKG), standalone Phlebotomy Technician, EKG Technician, EMT-Basic, Advanced EMT-Cardiac (RI-specific), and Paramedic certifications. All lead directly to Rhode Island state licensure or nationally recognized certification exams." },
-  { q: "How long are the programs?", a: "CNA is 8 weeks. Phlebotomy is 4–6 weeks. EMT-Basic spans several months with evening and weekend options for working students. The Paramedic program is 12–18 months. All programs include mandatory clinical rotations at partnered facilities." },
+  { q: "What certifications do I earn?", a: "We offer CNA, Patient Care Technician (Triple Certification: CNA + Phlebotomy + EKG), standalone Phlebotomy Technician, EKG Technician, EMT, Advanced EMT-Cardiac (RI-specific), and Paramedic certifications. All lead directly to Rhode Island state licensure or nationally recognized certification exams." },
+  { q: "How long are the programs?", a: "CNA is 8 weeks. Phlebotomy is 4–6 weeks. EMT spans several months with evening and weekend options for working students. The Paramedic program is 12–18 months. All programs include mandatory clinical rotations at partnered facilities." },
   { q: "Do you help graduates find jobs?", a: "Yes — job placement is central to our mission, not an afterthought. We actively partner with hospitals, nursing homes, fire departments, and private practices throughout Providence and Rhode Island to ensure graduates transition seamlessly from certification to employment." },
   { q: "Is RIEC accredited?", a: "All programs are state-approved and lead directly to Rhode Island state licensure or national certification exams. We maintain partnerships with the Rhode Island Department of Health and follow American Heart Association standards for all life support training." },
   { q: "Are donations tax-deductible?", a: "Yes. The Rhode Island Education Center for H.O.P.E. is a registered 501(c)(3) non-profit organization (EIN: 99-3099438). All contributions are tax-deductible to the full extent permitted by law, and you will receive a formal acknowledgment letter for your records." },
@@ -626,7 +626,7 @@ export default function RIECHomepage() {
               </div>
               <div className="track-programs">
                 {[
-                  { name: "EMT-Basic", detail: "Evenings & Weekends · CPR, airway mgmt, trauma · NREMT Exam Eligible", badge: "badge-funded", label: "100% Funded" },
+                  { name: "EMT", detail: "Evenings & Weekends · CPR, airway mgmt, trauma · NREMT Exam Eligible", badge: "badge-funded", label: "100% Funded" },
                   { name: "Advanced EMT-Cardiac (RI Specific)", detail: "Req: Active EMT License · IV therapy, intubation, ACLS & PALS · Highly sought by RI fire departments", badge: "badge-ri", label: "RI Exclusive" },
                   { name: "Paramedic Program", detail: "12–18 Months · Hybrid · Cardiology, pharmacology, advanced trauma support", badge: "badge-funded", label: "100% Funded" },
                 ].map((p, i) => (
@@ -772,7 +772,7 @@ export default function RIECHomepage() {
             </div>
             <div>
               <div className="footer-col-title">Programs</div>
-              {["CNA (8 Weeks)", "Patient Care Technician", "Phlebotomy", "EKG Technician", "EMT-Basic", "Advanced EMT-Cardiac", "Paramedic", "AHA / BLS / ACLS"].map(p => (
+              {["CNA (8 Weeks)", "Patient Care Technician", "Phlebotomy", "EKG Technician", "EMT", "Advanced EMT-Cardiac", "Paramedic", "AHA / BLS / ACLS"].map(p => (
                 <a href="#programs" className="footer-link" key={p}>{p}</a>
               ))}
             </div>

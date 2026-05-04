@@ -270,16 +270,16 @@ export const PROGRAMS: Program[] = [
 
   {
     slug: "emt-basic",
-    shortName: "EMT-Basic",
+    shortName: "EMT",
     fullName: "Emergency Medical Technician — Basic",
     tagline: "The entry point to a career in emergency services. Evenings and weekends available.",
     description:
-      "Our 16-week EMT-Basic program prepares students to provide pre-hospital emergency " +
+      "Our 16-week EMT program prepares students to provide pre-hospital emergency " +
       "care following the National EMS Education Standards (NEMSES). The curriculum covers " +
       "patient assessment, airway management, trauma stabilization, medical emergency response, " +
       "and safe patient transport. Evening and weekend scheduling makes this program accessible " +
       "for working adults. Upon graduation, students are eligible to sit for the NREMT " +
-      "cognitive and psychomotor exams and apply for a Rhode Island State EMT-Basic license " +
+      "cognitive and psychomotor exams and apply for a Rhode Island State EMT license " +
       "through the RIDOH EMS Division.",
     track: "emergency-medicine",
     grantFunded: true,
@@ -295,16 +295,16 @@ export const PROGRAMS: Program[] = [
       { label: "Schedule",      value: "Evenings & Weekends" },
       { label: "Clinical",      value: "Mandatory ambulance ride-along hours" },
       { label: "Standards",     value: "National EMS Education Standards (NEMSES)" },
-      { label: "Credentials",   value: "NREMT EMT-Basic + RI State EMT License (RIDOH)" },
+      { label: "Credentials",   value: "NREMT EMT + RI State EMT License (RIDOH)" },
       { label: "Tuition",       value: "$0 — 100% covered for eligible applicants" },
     ],
     outcomes: [
-      { text: "Credential 1: NREMT EMT-Basic certification — National Registry of Emergency Medical Technicians (NREMT), the national standard for EMT licensure" },
-      { text: "Credential 2: Rhode Island State EMT-Basic License — issued by the Rhode Island Department of Health (RIDOH) EMS Division" },
+      { text: "Credential 1: NREMT EMT certification — National Registry of Emergency Medical Technicians (NREMT), the national standard for EMT licensure" },
+      { text: "Credential 2: Rhode Island State EMT License — issued by the Rhode Island Department of Health (RIDOH) EMS Division" },
       { text: "Program follows the National EMS Education Standards (NEMSES), ensuring graduates meet national competency benchmarks" },
       { text: "Eligible employers: private ambulance services, municipal EMS agencies, fire departments (EMT-B level), hospital emergency transport teams, ski patrol, and industrial medicine" },
       { text: "Estimated RI starting wage: $18–$24/hr; higher with fire department appointment or overtime eligibility" },
-      { text: "Prerequisite unlocked: NREMT EMT-Basic is the required prerequisite for RIEC's Advanced EMT-Cardiac (AEMT-C) program" },
+      { text: "Prerequisite unlocked: NREMT EMT is the required prerequisite for RIEC's Advanced EMT-Cardiac (AEMT-C) program" },
     ],
     skills: [
       { text: "Scene size-up: safety assessment, standard precautions, mechanism of injury or nature of illness analysis, and resource or mutual aid requests" },
@@ -326,15 +326,15 @@ export const PROGRAMS: Program[] = [
     description:
       "The Advanced EMT-Cardiac (AEMT-C) is a licensure level unique to Rhode Island, " +
       "administered by the Rhode Island Department of Health (RIDOH) EMS Division. It " +
-      "bridges the gap between EMT-Basic and Paramedic, significantly expanding scope of " +
+      "bridges the gap between EMT and Paramedic, significantly expanding scope of " +
       "practice with peripheral IV therapy, advanced airway management, and expanded " +
       "medication administration. AHA ACLS and PALS certifications are included. " +
       "The AEMT-C credential is actively sought by Rhode Island fire departments and " +
       "private ALS ambulance companies and is a critical unlock for fire department " +
-      "ALS hiring eligibility in Rhode Island. An active RI EMT-Basic license is required.",
+      "ALS hiring eligibility in Rhode Island. An active RI EMT license is required.",
     track: "emergency-medicine",
     grantFunded: true,
-    prerequisites: ["Active Rhode Island EMT-Basic License"],
+    prerequisites: ["Active Rhode Island EMT License"],
     order: 6,
     schemaUrl: "https://rieducationcenter.org/programs/aemt-cardiac",
     badges: [
@@ -345,7 +345,7 @@ export const PROGRAMS: Program[] = [
       { label: "Duration",        value: "Approx. 6 Months" },
       { label: "Format",          value: "In-Person" },
       { label: "Schedule",        value: "Evenings & Weekends" },
-      { label: "Prerequisite",    value: "Active RI EMT-Basic License" },
+      { label: "Prerequisite",    value: "Active RI EMT License" },
       { label: "Credentials",     value: "RI AEMT-Cardiac License + AHA ACLS + AHA PALS" },
       { label: "Tuition",         value: "$0 — 100% covered for eligible applicants" },
     ],
@@ -384,7 +384,7 @@ export const PROGRAMS: Program[] = [
       "Rhode Island Paramedic licensure via the RIDOH EMS Division.",
     track: "emergency-medicine",
     grantFunded: true,
-    prerequisites: ["Active Rhode Island EMT-Basic License"],
+    prerequisites: ["Active Rhode Island EMT License"],
     order: 7,
     schemaUrl: "https://rieducationcenter.org/programs/paramedic",
     badges: [
@@ -394,7 +394,7 @@ export const PROGRAMS: Program[] = [
       { label: "Duration",        value: "12–18 Months" },
       { label: "Format",          value: "Hybrid (Online didactic + In-person clinical labs & field internship)" },
       { label: "Schedule",        value: "Evenings, Weekends & Intensive clinical blocks" },
-      { label: "Prerequisite",    value: "Active RI EMT-Basic License" },
+      { label: "Prerequisite",    value: "Active RI EMT License" },
       { label: "Clinical",        value: "ED, ICU, OR, and supervised field internship rotations" },
       { label: "Credentials",     value: "NREMT-Paramedic (NRP) + RI Paramedic License (RIDOH)" },
       { label: "Tuition",         value: "$0 — 100% covered for eligible applicants" },

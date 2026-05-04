@@ -28,7 +28,7 @@ const PROGRAMS = [
   { value: 'pct',          label: 'Patient Care Technician (PCT)' },
   { value: 'phlebotomy',   label: 'Phlebotomy Technician' },
   { value: 'ekg',          label: 'EKG Technician' },
-  { value: 'emt-basic',    label: 'EMT-Basic' },
+  { value: 'emt-basic',    label: 'EMT' },
   { value: 'aemt-cardiac', label: 'Advanced EMT-Cardiac (RI)' },
   { value: 'paramedic',    label: 'Paramedic Program' },
   { value: 'aha',          label: 'AHA BLS / ACLS / PALS' },

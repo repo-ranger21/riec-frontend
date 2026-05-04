@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Healthcare Training Programs",
   description:
     "Explore RIEC's full catalog of 100% grant-funded healthcare training programs " +
-    "in Rhode Island: CNA, Patient Care Technician, Phlebotomy, EKG, EMT-Basic, " +
+    "in Rhode Island: CNA, Patient Care Technician, Phlebotomy, EKG, EMT, " +
     "Advanced EMT-Cardiac, Paramedic, and AHA certifications.",
   alternates: {
     canonical: "https://rieducationcenter.org/programs",

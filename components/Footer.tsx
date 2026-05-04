@@ -39,7 +39,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
       { href: "/programs/pct", label: "Patient Care Technician" },
       { href: "/programs/phlebotomy", label: "Phlebotomy Technician" },
       { href: "/programs/ekg", label: "EKG Technician" },
-      { href: "/programs/emt-basic", label: "EMT-Basic" },
+      { href: "/programs/emt-basic", label: "EMT" },
       { href: "/programs/aemt-cardiac", label: "Advanced EMT-Cardiac" },
       { href: "/programs/paramedic", label: "Paramedic Program" },
       { href: "/programs/aha", label: "AHA BLS / ACLS / PALS" },
